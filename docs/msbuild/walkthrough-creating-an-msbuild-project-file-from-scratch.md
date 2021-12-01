@@ -10,6 +10,7 @@ ms.assetid: e3acff7c-cb4e-4ae1-8be2-a871bcff847b
 author: ghogen
 ms.author: ghogen
 manager: jmartens
+ms.technology: msbuild
 ms.workload:
 - multiple
 ---
@@ -101,7 +102,7 @@ Before you can use MSBuild, you must extend the PATH environment variable to inc
 
 ### To create a minimal MSBuild project file
 
-1. In the text editor, replace the existing text by using these two lines:
+1. In the text editor, create a new file and enter these two lines:
 
     ```xml
     <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">

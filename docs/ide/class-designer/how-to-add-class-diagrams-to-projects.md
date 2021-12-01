@@ -2,7 +2,7 @@
 title: Add Class Diagrams to projects (Class Designer)
 description: Learn how to design, edit, and refactor classes and other types, add a class diagram to your C#, Visual Basic, or C++ project.
 ms.custom: SEO-VS-2020
-ms.date: 05/08/2018
+ms.date: 11/11/2021
 ms.topic: how-to
 helpviewer_keywords:
 - class diagrams, creating
@@ -11,6 +11,7 @@ ms.assetid: 0eac1b54-2711-4e4b-9654-a0c429c08c8f
 author: TerryGLee
 ms.author: tglee
 manager: jmartens
+ms.technology: vs-ide-general
 ms.workload:
 - multiple
 ---
@@ -18,7 +19,7 @@ ms.workload:
 
 To design, edit, and refactor classes and other types, add a class diagram to your C#, Visual Basic, or C++ project. To visualize different parts of the code in a project, add multiple class diagrams to the project.
 
-You can't create class diagrams from projects that share code across multiple apps. To create UML class diagrams, see [Create UML modeling projects and diagrams](../../modeling/what-s-new-for-design-in-visual-studio.md).
+You can't create class diagrams from projects that share code across multiple apps. To create UML class diagrams, see [Create UML modeling projects and diagrams](https://devblogs.microsoft.com/devops/uml-designers-have-been-removed-layer-designer-now-supports-live-architectural-analysis/).
 
 ## Install the Class Designer component
 
@@ -32,7 +33,15 @@ If you haven't installed the **Class Designer** component, follow these steps to
 
 1. Select **Class Designer** and then select **Modify**.
 
-   ![Class Designer component in Visual Studio Installer](media/class-designer-component.png)
+    ::: moniker range="vs-2017"
+   ![Screenshot of the Class Designer component in Visual Studio Installer](media/class-designer-component.png)
+   ::: moniker-end
+   ::: moniker range="vs-2019"
+   :::image type="content" source="media/vs-2019/class-designer-component.png" alt-text="Screenshot of the Class Designer component in the Visual Studio Installer." lightbox="media/vs-2019/class-designer-component.png":::
+   ::: moniker-end
+   ::: moniker range="vs-2022"
+   :::image type="content" source="media/vs-2022/class-designer-component.png" alt-text="Screenshot of the Class Designer component in the Visual Studio Installer." lightbox="media/vs-2022/class-designer-component.png":::
+   ::: moniker-end
 
    The **Class Designer** component starts installing.
 
@@ -68,7 +77,7 @@ In **Solution Explorer** or Class View, right-click the project and choose **Vie
 
 An auto-populated class diagram is created.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Class Designer is not available in .NET Core projects.
 
 ## See also

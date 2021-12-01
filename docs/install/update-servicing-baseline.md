@@ -1,12 +1,11 @@
 ---
 title: Update Visual Studio while on a servicing baseline
 description: Learn how to update Visual Studio while staying on a servicing baseline.
-ms.date: 07/17/2019
-ms.custom: seodec18
+ms.date: 11/23/2021
 ms.topic: conceptual
 ms.assetid: 
-author: j-martens
-ms.author: jmartens
+author: anandmeg
+ms.author: meghaanand
 manager: jmartens
 ms.workload:
 - multiple
@@ -16,7 +15,7 @@ monikerRange: ">=vs-2019"
 ---
 # Update Visual Studio while on a servicing baseline
 
-We update Visual Studio often during its product lifecycle. There are two types of updates: 
+We update Visual Studio often during its product lifecycle. There are two types of updates:
 
 * **Minor release updates**&mdash;for example, 16.0 to 16.1&mdash;that include new features and components.  
 * **Servicing updates**—for example, 16.0.4 to 16.0.5—that include only targeted fixes for critical issues.
@@ -45,7 +44,7 @@ Administrators who use a network layout installation should modify the `channelU
 
 For an internet-based installation, add `--channelUri` with a non-existent channel manifest to the command-line used to launch setup. This disables Visual Studio from using the latest available release for an update. Here's an example:
 
-```cmd
+```shell
 vs_enterprise.exe --channelUri c:\doesnotexist.chman
 ```
 
@@ -57,21 +56,33 @@ Another option to control updates on a client is to [turn off update notificatio
 
 When an update for a servicing baseline is available, fixed-version bootstrapper files are made available for the servicing update at [My.VisualStudio.com](https://my.visualstudio.com/Downloads?q=visual%20studio%202019%20version%2016.0).
 
-For administrators who deploy by using a network layout install, the administrator should update the [layout location](update-a-network-installation-of-visual-studio.md). Clients that installed from the location will receive update notifications. If the update must be deployed to clients, follow [these instructions](update-a-network-installation-of-visual-studio.md#deploy-an-update-to-client-machines). When you modify the 'response.json' for an update, do not add additional workloads, components, or languages. Managing these settings must be done as a 'modify' deployment after the product has been updated.
+For administrators who deploy by using a network layout install, the administrator should update the [layout location](create-a-network-installation-of-visual-studio.md#update-or-modify-your-layout). Clients that installed from the location will receive update notifications. If the update must be deployed to clients, follow [these instructions](update-a-network-installation-of-visual-studio.md). When you modify the 'response.json' for an update, do not add additional workloads, components, or languages. Managing these settings must be done as a 'modify' deployment after the product has been updated.
 
 For an internet-based installation, run the new fixed version bootstrapper with the `--channelUri` parameter pointing to a non-existent channel manifest on the client. If the update is deployed in quiet or passive mode, use two separate commands:
 
 1. Update the Visual Studio installer:
 
-    ```cmd
+    ```shell
     vs_enterprise.exe --quiet --update
     ```
 
+::: moniker range="vs-2019"
+ 
 2. Update the Visual Studio application itself:
-
-    ```cmd
+    ```shell
     vs_enterprise.exe update --installPath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise" --quiet --wait --norestart --channelUri c:\doesnotexist.chman
     ```
+
+::: moniker-end
+
+::: moniker range=">=vs-2022"
+
+2. Update the Visual Studio application itself:
+    ```shell
+    vs_enterprise.exe update --installPath "C:\Program Files\Microsoft Visual Studio\2022\Enterprise" --quiet --wait --norestart --channelUri c:\doesnotexist.chman
+    ```
+
+::: moniker-end
 
 [!INCLUDE[install_get_support_md](includes/install_get_support_md.md)]
 
